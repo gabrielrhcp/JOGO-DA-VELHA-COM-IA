@@ -49,6 +49,7 @@ void pc(char velha[3][3],char simbC,char simbP,int *jogada, int *level){
        prob_max=94;
     }
 
+    //JOGADAS BOAS
     if(prob>=0 && prob<=prob_max){
 
     //CHANCES DE VITORIA
@@ -788,19 +789,343 @@ void pc(char velha[3][3],char simbC,char simbP,int *jogada, int *level){
 
     //===========================================================================================//
 
+    //JOGADAS RUINS
     }else{
-        while('true'){
-            aleat=rand()%9;
-            if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
-            if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
-            if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
-            if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
-            if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
-            if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
-            if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
-            if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
-            if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+
+        //LINHA 1
+        if(velha[0][0]==' ' && velha[0][1]==simbC && velha[0][2]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][0]==simbC && velha[0][1]==' ' && velha[0][2]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][0]==simbC && velha[0][1]==simbC && velha[0][2]==' '){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        //LINHA 2
+        else if(velha[1][0]==' ' && velha[1][1]==simbC && velha[1][2]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[1][0]==simbC && velha[1][1]==' ' && velha[1][2]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[1][0]==simbC && velha[1][1]==simbC && velha[1][2]==' '){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        //LINHA 3
+        else if(velha[2][0]==' ' && velha[2][1]==simbC && velha[2][2]==simbC) {
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[2][0]==simbC && velha[2][1]==' ' && velha[2][2]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[2][0]==simbC && velha[2][1]==simbC && velha[2][2]==' '){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+            }
+        }
+        //COLUNA 1
+        else if(velha[0][0]==' ' && velha[1][0]==simbC && velha[2][0]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][0]==simbC && velha[1][0]==' ' && velha[2][0]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][0]==simbC && velha[1][0]==simbC && velha[2][0]==' '){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        //COLUNA 2
+        else if(velha[0][1]==' ' && velha[1][1]==simbC && velha[2][1]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][1]==simbC && velha[1][1]==' ' && velha[2][1]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][1]==simbC && velha[1][1]==simbC && velha[2][1]==' '){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        //COLUNA 3
+        else if(velha[0][2]==' ' && velha[1][2]==simbC && velha[2][2]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][2]==simbC && velha[1][2]==' ' && velha[2][2]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][2]==simbC && velha[1][2]==simbC && velha[2][2]==' '){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+            }
+        }
+        //DIAGONAL PRINCIPAL
+        else if(velha[0][0]==' ' && velha[1][1]==simbC && velha[2][2]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][0]==simbC && velha[1][1]==' ' && velha[2][2]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][0]==simbC && velha[1][1]==simbC && velha[2][2]==' '){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+            }
+        }
+        //DIAGONAL SECUNDARIA
+        else if(velha[0][2]==' ' && velha[1][1]==simbC && velha[2][0]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][2]==simbC && velha[1][1]==' ' && velha[2][0]==simbC){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+        else if(velha[0][2]==simbC && velha[1][1]==simbC && velha[2][0]==' '){
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
+        }
+
+        else{
+            while('true'){
+                aleat=rand()%9;
+                if(aleat==0 && velha[0][0]==' ') {velha[0][0]=simbC; break;}
+                if(aleat==1 && velha[0][1]==' ') {velha[0][1]=simbC; break;}
+                if(aleat==2 && velha[0][2]==' ') {velha[0][2]=simbC; break;}
+                if(aleat==3 && velha[1][0]==' ') {velha[1][0]=simbC; break;}
+                if(aleat==4 && velha[1][1]==' ') {velha[1][1]=simbC; break;}
+                if(aleat==5 && velha[1][2]==' ') {velha[1][2]=simbC; break;}
+                if(aleat==6 && velha[2][0]==' ') {velha[2][0]=simbC; break;}
+                if(aleat==7 && velha[2][1]==' ') {velha[2][1]=simbC; break;}
+                if(aleat==8 && velha[2][2]==' ') {velha[2][2]=simbC; break;}
+            }
         }
     }
-
 }
