@@ -1,5 +1,6 @@
-void player(char lal[3][3],int *f,int *num,int *l,int *c){
- char cord[5];
+void player(char lal[3][3],int *f,int *num,int *l,int *c,char sp,char sc){
+ char cord[5];//cordenadas da tabela;
+        printf("VOC%c:(%c) | PC:(%c) | [R]einiciar [M]enu\n\n",210,sp,sc);
         printf("Informe a cordenada: (Ex:A1 ou b3)\n");
         scanf("%s",cord);
 
