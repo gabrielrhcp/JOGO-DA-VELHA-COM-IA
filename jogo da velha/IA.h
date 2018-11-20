@@ -1,39 +1,43 @@
 void player(char lal[3][3],int *f,int *num,int *l,int *c,char sp,char sc){
- char cord[5];//cordenadas da tabela;
-        printf("VOC%c:(%c) | PC:(%c) | [R]einiciar [M]enu\n\n",210,sp,sc);
-        printf("Informe a cordenada: (Ex:A1 ou b3)\n");
-        scanf("%s",cord);
+    char cord[50];//cordenadas da tabela;
+    printf("VOC%c:(%c) | PC:(%c) | [R]einiciar [M]enu\n\n",210,sp,sc);
+    printf("Informe a cordenada: (Ex:A1 ou b3)\n");
+    scanf("%s",cord);
 
-        //A//
-        if(strcmp(cord,"a1")==0 || strcmp(cord,"A1")==0){*l=1;*c=1;}
-        else if(strcmp(cord,"a2")==0 || strcmp(cord,"A2")==0){*l=1;*c=2;}
-        else if(strcmp(cord,"a3")==0 || strcmp(cord,"A3")==0){*l=1;*c=3;}
-        //B//
-        if(strcmp(cord,"b1")==0 || strcmp(cord,"B1")==0){*l=2;*c=1;}
-        else if(strcmp(cord,"b2")==0 || strcmp(cord,"B2")==0){*l=2;*c=2;}
-        else if(strcmp(cord,"b3")==0 || strcmp(cord,"B3")==0){*l=2;*c=3;}
-        //C//
-        if(strcmp(cord,"c1")==0 || strcmp(cord,"C1")==0){*l=3;*c=1;}
-        else if(strcmp(cord,"c2")==0 || strcmp(cord,"C2")==0){*l=3;*c=2;}
-        else if(strcmp(cord,"c3")==0|| strcmp(cord,"C3")==0){*l=3;*c=3;}
-        //GO_MENU//
-        if (strcmp(cord,"m")==0 || strcmp(cord,"M")==0){*num=12;}
-        //RESTART//
-        if(strcmp(cord,"r")==0 || strcmp(cord,"R")==0){*num=13;}
+    //A//
+    if(strcmp(cord,"a1")==0 || strcmp(cord,"A1")==0){*l=1;*c=1;}
+    else if(strcmp(cord,"a2")==0 || strcmp(cord,"A2")==0){*l=1;*c=2;}
+    else if(strcmp(cord,"a3")==0 || strcmp(cord,"A3")==0){*l=1;*c=3;}
+        
+    //B//
+    if(strcmp(cord,"b1")==0 || strcmp(cord,"B1")==0){*l=2;*c=1;}
+    else if(strcmp(cord,"b2")==0 || strcmp(cord,"B2")==0){*l=2;*c=2;}
+    else if(strcmp(cord,"b3")==0 || strcmp(cord,"B3")==0){*l=2;*c=3;}
+        
+    //C//
+    if(strcmp(cord,"c1")==0 || strcmp(cord,"C1")==0){*l=3;*c=1;}
+    else if(strcmp(cord,"c2")==0 || strcmp(cord,"C2")==0){*l=3;*c=2;}
+    else if(strcmp(cord,"c3")==0|| strcmp(cord,"C3")==0){*l=3;*c=3;}
+        
+    //GO_MENU//
+    if (strcmp(cord,"m")==0 || strcmp(cord,"M")==0){*num=12;}
+        
+    //RESTART//
+    if(strcmp(cord,"r")==0 || strcmp(cord,"R")==0){*num=13;}
 
-        if(lal[*l-1][*c-1]!=' ' || (*c>3 || *c<1) || (*l>3 || *l<1)){
-            *l=0;
-            *c=0;
-            tabela(lal);
+    if(lal[*l-1][*c-1]!=' ' || (*c>3 || *c<1) || (*l>3 || *l<1)){
+        *l=0;
+        *c=0;
+        tabela(lal);
+    }else{
+        if(*f==1 ){
+            lal[*l-1][*c-1]='X';
         }else{
-            if(*f==1 ){
-                lal[*l-1][*c-1]='X';
-             }else{
-                lal[*l-1][*c-1]='O';
-                 }
-            *num +=1;
-            tabela(lal);
-         }
+            lal[*l-1][*c-1]='O';
+        }
+        *num +=1;
+        tabela(lal);
+    }
 }
 
 void pc(char velha[3][3],char simbC,char simbP,int *jogada, int *level){

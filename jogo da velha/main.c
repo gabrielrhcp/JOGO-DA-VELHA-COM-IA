@@ -1,12 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "menu.h"
 #include "IA.h"
 
 int main(void){
-char velha[3][3];//matriz 
+
+FILE* arq_placar;
+FILE* arq_placar_up;
+arq_placar = fopen("placar.txt","r");
+
+char velha[3][3];//matriz
 char res,res2='s';//variáveis de controle de menu e prosegimento de jogo,respectivamente
-int pwin=0,pcwin=0,vlh=0;//,lastwin=0;//vitórias do jogador,vitórias do pc,empates e ultimo a ganhar,respectivamente.
+int pwin=0,pcwin=0,vlh=0;//vitórias do jogador,vitórias do pc,empates e ultimo a ganhar,respectivamente.
+int arq_pwin, arq_pcwin,arq_vlh;
+fscanf(arq_placar,"%d %d %d",&pwin,&pcwin,&vlh);
+
 do{//laço principal.
     for(int i=0;i<3;i++){
         for(int j=0;j<3;j++){   //Deixa a tabela em branco e previne de lixo na memória.
@@ -18,7 +27,6 @@ do{//laço principal.
     if(res2=='s'){
         qual=0,quem=0,level=0;
         simbP=' ',simbC=' ';    //menu
-        pwin=0,pcwin=0,vlh=0;
         menu(&qual,&quem,&level,&simbP,&simbC);
     }
     int l=0,c=0,num=0;//linha na matriz,coluna na matriz e número de jogadas,respectivamente.
@@ -31,14 +39,14 @@ do{//laço principal.
             player(velha,&qual,&num,&l,&c,simbP,simbC);
             //printf("VOC%c:(%c) | PC:(%c)\n\n",210,simbP,simbC);
          }else{
-            pc(velha,simbC,simbP,&num,&level);  
-            tabela(velha);						         
+            pc(velha,simbC,simbP,&num,&level);
+            tabela(velha);
             num++;
          }
      }else if(quem==2){
          if(num%2==0){ //ordem de jogada com base na seleção de ordem e/ou último a ganhar.
             pc(velha,simbC,simbP,&num,&level);
-            tabela(velha);                             
+            tabela(velha);
             num++;
          }else{
              player(velha,&qual,&num,&l,&c,simbP,simbC);
@@ -152,6 +160,15 @@ do{//laço principal.
         }
     }
 }while(res=='s');
+
+arq_placar_up = fopen("placar.txt","w");
+fprintf(arq_placar_up,"%d %d %d",pwin,pcwin,vlh);
+
+remove(arq_placar);
+
+fclose(arq_placar_up);
+fclose(arq_placar);
+
 }
 
 //============================MENU=============================//
