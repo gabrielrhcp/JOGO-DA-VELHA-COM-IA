@@ -9,9 +9,9 @@ printf("\t(C)    %c  |  %c  |  %c\n\n\n",mesa[2][0],mesa[2][1],mesa[2][2]);
 }//tabela que mostra o andar do jogo.
 
 void placar(int pw,int pcw,int v){
-    printf("                |PLACAR|\n\n");
-    printf("     | player | |  pc  | | velha |\n");
-    printf("     |   %d    | |  %d   | |   %d   |\n\n",pw,pcw,v);
+    printf("\t             |PLACAR|\n\n");
+    printf("\t      player    pc     velha \n");
+    printf("\t        %d       %d       %d   \n\n",pw,pcw,v);
 }//mostra a pontuação do jogo.
 
 
@@ -20,18 +20,18 @@ void menu(int *x,int *y,int *z,char *sp,char *sc){
     int cont=0;
     do{//laço do lup "menu".
 
-    char a,b,c;//variaveis de cntrole//
+    char a[50],b[50],c[50];//variaveis de cntrole//
 
     while(cont<1){//lup que assegura uma escolha compatível.
         printf("\t        MENU\n\n");
         printf("escolha com que simbolo jogar: 'x' ou 'o'\n");
-        scanf("%c",&a);
-        if(a=='x' || a=='X'){
+        scanf("%s",&a);
+        if(strcmp(a,"x")==0 || strcmp(a,"X")==0){
             *x=1;
             *sp='X';
             *sc='O';
             cont++;
-        }else if(a=='o' || a=='O'|| a=='0'){  //alterna entre jogar com 'x' ou 'o'.
+        }else if (strcmp(a,"o")==0 || strcmp(a,"O")==0 || strcmp(a,"0")==0){  //alterna entre jogar com 'x' ou 'o'.
             *x=2;
             *sp='O';
             *sc='X';
@@ -44,11 +44,11 @@ void menu(int *x,int *y,int *z,char *sp,char *sc){
         printf("esolha quem jogara primeiro:'p' ou 'c'\n");
         printf("p-> player.\n");
         printf("c-> computador.\n");
-        scanf("%c",&b);
-        if(b=='p' || b=='P'){
+        scanf("%s",&b);
+        if(strcmp(b,"p")==0 || strcmp(b,"P")==0){
             *y=1;
             cont++;
-        }else if(b=='c'|| b=='C'){   //alterna na ordem de jogada.
+        }else if (strcmp(b,"c")==0 || strcmp(b,"C")==0){  //alterna na ordem de jogada.
             *y=2;
             cont++;
         }
@@ -60,14 +60,14 @@ void menu(int *x,int *y,int *z,char *sp,char *sc){
         printf("f-> f%ccil.\n",160);
         printf("m-> m%cdio.\n",130);
         printf("d-> dif%ccil.\n",161);
-        scanf("%c",&c);
-        if(c=='f'|| c=='F'){
+        scanf("%s",&c);
+        if (strcmp(c,"f")==0 || strcmp(c,"F")==0){
             *z=1;
             cont++;
-        }else if(c=='m' || c=='M'){
+        }else if (strcmp(c,"m")==0 || strcmp(c,"M")==0){
             *z=2;
             cont++;                 //alterna a dificuldade do jogo.
-        }else if(c=='d' || c=='D'){
+        }else if (strcmp(c,"d")==0 || strcmp(c,"D")==0){
             *z=3;
             cont++;
         }
