@@ -11,7 +11,7 @@ printf("\t(C)    %c  |  %c  |  %c\n\n\n",mesa[2][0],mesa[2][1],mesa[2][2]);
 void placar(int pw,int pcw,int v){
     printf("\t             |PLACAR|\n\n");
     printf("\t      player    pc     velha \n");
-    printf("\t        %d       %d       %d   \n\n",pw,pcw,v);
+    printf("\t        %d       %d        %d   \n\n",pw,pcw,v);
 }//mostra a pontuação do jogo.
 
 
