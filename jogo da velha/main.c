@@ -12,8 +12,7 @@ arq_placar = fopen("placar.txt","r");
 
 char velha[3][3];//matriz
 char res,res2='s';//variáveis de controle de menu e prosegimento de jogo,respectivamente
-int pwin=0,pcwin=0,vlh=0;//vitórias do jogador,vitórias do pc,empates e ultimo a ganhar,respectivamente.
-int arq_pwin, arq_pcwin,arq_vlh;
+int pwin,pcwin,vlh;//vitórias do jogador,vitórias do pc,empates e ultimo a ganhar,respectivamente.
 fscanf(arq_placar,"%d %d %d",&pwin,&pcwin,&vlh);
 
 do{//laço principal.
